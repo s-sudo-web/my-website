@@ -113,7 +113,8 @@ nav a:hover {
 /* スマホ用イベント画像のスタイル*/
 @media screen and (max-width: 960px) {
   #main-event img {
-    width: 90%;
+    width: 20%;
+    margin: 3px;
   }
 }
 
