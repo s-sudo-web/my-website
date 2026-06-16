@@ -24,7 +24,9 @@
           <li><a href="#main-concept">コンセプト</a></li>
           <li><a href="#main-menu">メニュー</a></li>
           <li><a href="#main-takeout">テイクアウト</a></li>
+       <li><a href="#main-coupon">クーポン</a></li>
           <li><a href="#main-access">アクセス</a></li>
+          
         </ul>
       </nav>
 
@@ -163,7 +165,7 @@
         </div>
         <div id="site-reserve">
           <div class="site_reserve">
-            <h3>ご注文はこちらから</h3>
+            <h3>【テイクアウトのご注文はこちらから】</h3>
             <h2>TEL:000-0000-0000</h2>
             <a href="https://forms.gle/hGSuFFCq82KsHsn88"
               >テイクアウト注文フォーム</a
@@ -171,7 +173,59 @@
           </div>
         </div>
       </section>
+      
+<section id="main-coupon">
+  <div class="coupon">
+    <img src="img/main-coupon.png" alt="coupon_img" />
+  </div>
 
+  <h2>クーポン</h2>
+
+  <div class="main_coupon">
+    <h3>【５０円引きクーポン】</h3>
+    <img src="img/50.png" alt="50coupon_img" />
+    <p>
+      会計時にこの画面を提示していただくと、<span class="sp-br"><br></span>合計額から50円引きになります。
+      <br>※何度でもご利用いただけます※
+    </p>
+    <br>
+    <h3>【クーポン獲得チャレンジ】</h3>
+
+    <p>Q.このお店の名前は？</p>
+
+    <input type="text" id="answer" placeholder="答えを入力">
+    <button onclick="checkAnswer()">回答</button>
+
+    <p id="message"></p>
+
+    <div id="result" style="display:none;">
+      <h2><strong>クーポン番号：559</strong></h2>
+      <h3>ドリンク一杯無料</h3>
+      <p>※注文時に店員へ番号をお伝えください。※</p>
+    </div>
+  </div>
+
+  <script>
+  function checkAnswer() {
+    const answer = document.getElementById("answer").value.trim();
+    const coupon = document.getElementById("result");
+    const message = document.getElementById("message");
+
+    if (
+      answer === "ケンダイ・ビストロ" ||
+      answer === "ケンダイビストロ" ||
+      answer === "けんだい・びすとろ" ||
+      answer === "けんだいびすとろ"
+    ) {
+      coupon.style.display = "block";
+      message.textContent = "";
+    } else {
+      coupon.style.display = "none";
+      message.innerHTML = "不正解<br>またの挑戦をお待ちしております。";
+    }
+  }
+  </script>
+</section>
       <section id="main-access">
         <div class="theme_logo">
  <img src="img/access_img.png" alt="access_img" />
